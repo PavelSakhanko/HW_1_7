@@ -8,8 +8,8 @@
 import SwiftUI
 
 extension View {
-    func backgroundColor() -> some View {
-        Color.blue.opacity(5.0)
+    func backgroundColor(_ color: Color) -> some View {
+        color.opacity(5.0)
             .edgesIgnoringSafeArea(.all)
     }
 }
