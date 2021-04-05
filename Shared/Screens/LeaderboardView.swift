@@ -12,25 +12,42 @@ struct LeaderboardView: View {
     @Binding var isMenuShowing: Bool
     @Binding var isPresentedLeaderBoard: Bool
     
+    @ObservedObject var users = UserModel()
+    
     var body: some View {
         ZStack {
-            backgroundColor(.red)
+            backgroundColor(.white)
+            
+            
+            
+            
             VStack {
                 HStack {
                     Button(action: {
                         isMenuShowing.toggle()
                         isPresentedLeaderBoard.toggle()
                     }) {
-                       Image("cross")
+                       Text("x")
+                        .foregroundColor(.red)
+                        .font(.title2)
                     }
                     Spacer()
                 }
-                Spacer()
-
+                .padding()
                 HStack {
                     Text("Leaderboard")
-                        .foregroundColor(.white)
+                        .foregroundColor(.red)
                 }
+                
+                List(users.users, id: \.id) { user in
+                    HStack {
+                        Text(user.icon)
+                        Text(user.name)
+                        Spacer()
+                        Text("Score: \(user.score)")
+                    }
+                }
+
                 Spacer()
             }
         }

@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum PossibleResults: String, CaseIterable {
-    case win = "Win"
-    case lose = "Lose"
-}
-
 struct NewGameView: View {
     
     let possibleMoves = ["rock", "paper", "scissors"]
@@ -33,10 +28,13 @@ struct NewGameView: View {
                     isMenuShowing.toggle()
                     isPresentedNewGame.toggle()
                 }) {
-                   Image("cross")
+                    Text("x")
+                     .foregroundColor(.white)
+                     .font(.title2)
                 }
                 Spacer()
             }
+            .padding()
             VStack {
                 Text("Score: \(gameScore)")
                 Text(gameRoundCounter == 0 || roundsLeft == "0" ? "New Game !" :
@@ -68,17 +66,12 @@ struct NewGameView: View {
                 }
             }
             Spacer()
-            
-            Spacer()
-
-            HStack {
-                Text("New Game")
-                    .foregroundColor(.white)
-            }
-            Spacer()
         }
     }
+}
 
+
+extension NewGameView {
     private func showImage() -> some View {
         gameRoundCounter == 0 || roundsLeft == "0" ? Image(systemName: "play")
             : Image(possibleMoves[Int(currentChoiceIndex)!])

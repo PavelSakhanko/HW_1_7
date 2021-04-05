@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-    
-    @ObservedObject var viewModel: ScreenModel = .init()
+
     @State private var isPresentedNewGame = false
     @State private var isPresentedSettings = false
     @State private var isPresentedLeaderBoard = false
