@@ -11,8 +11,3 @@ enum PossibleResults: String, CaseIterable {
     case win = "Win"
     case lose = "Lose"
 }
-
-struct GameMechanics {
-    
-    static let possibleMoves = ["rock", "paper", "scissors"]
-}
