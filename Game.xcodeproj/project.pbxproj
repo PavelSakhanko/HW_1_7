@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B02F5A7261B9BAF008A8894 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02F5A6261B9BAF008A8894 /* UIHelper.swift */; };
+		4B02F5A8261B9BAF008A8894 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02F5A6261B9BAF008A8894 /* UIHelper.swift */; };
+		4B02F5A9261B9BAF008A8894 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02F5A6261B9BAF008A8894 /* UIHelper.swift */; };
 		4B2D9D99261A4DD400244980 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D9D98261A4DD400244980 /* MenuView.swift */; };
 		4B2D9D9A261A4DD400244980 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D9D98261A4DD400244980 /* MenuView.swift */; };
 		4B2D9DA4261A541F00244980 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D9DA3261A541F00244980 /* MenuButton.swift */; };
@@ -93,6 +96,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B02F5A6261B9BAF008A8894 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		4B2D9D98261A4DD400244980 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4B2D9DA3261A541F00244980 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		4B2D9DAB261A545B00244980 /* View+backgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+backgroundColor.swift"; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				4B2D9DFC261B6A2300244980 /* GameMechanics.swift */,
+				4B02F5A6261B9BAF008A8894 /* UIHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -314,6 +319,8 @@
 				4BD5692F261A46E300277BB3 /* PBXTargetDependency */,
 			);
 			name = "Game (iOS)";
+			packageProductDependencies = (
+			);
 			productName = "Game (iOS)";
 			productReference = 4BD56854261A42F800277BB3 /* Game.app */;
 			productType = "com.apple.product-type.application";
@@ -401,6 +408,8 @@
 				Base,
 			);
 			mainGroup = 4BD56847261A42F700277BB3;
+			packageReferences = (
+			);
 			productRefGroup = 4BD56855261A42F800277BB3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -457,6 +466,7 @@
 				4BD56862261A42F800277BB3 /* GameView.swift in Sources */,
 				4B2D9DD6261A5A0500244980 /* SettingsView.swift in Sources */,
 				4B2D9DAC261A545B00244980 /* View+backgroundColor.swift in Sources */,
+				4B02F5A7261B9BAF008A8894 /* UIHelper.swift in Sources */,
 				4B2D9DFD261B6A2300244980 /* GameMechanics.swift in Sources */,
 				4B2D9D99261A4DD400244980 /* MenuView.swift in Sources */,
 				4B2D9DDD261A5A1700244980 /* LeaderboardView.swift in Sources */,
@@ -474,6 +484,7 @@
 				4BD56863261A42F800277BB3 /* GameView.swift in Sources */,
 				4B2D9DD7261A5A0500244980 /* SettingsView.swift in Sources */,
 				4B2D9DAD261A545B00244980 /* View+backgroundColor.swift in Sources */,
+				4B02F5A8261B9BAF008A8894 /* UIHelper.swift in Sources */,
 				4B2D9DFE261B6A2300244980 /* GameMechanics.swift in Sources */,
 				4B2D9D9A261A4DD400244980 /* MenuView.swift in Sources */,
 				4B2D9DDE261A5A1700244980 /* LeaderboardView.swift in Sources */,
@@ -496,6 +507,7 @@
 				4B2D9E20261B7E8800244980 /* SettingsView.swift in Sources */,
 				4B2D9E1B261B7E8500244980 /* NewGameView.swift in Sources */,
 				4BD5691E261A46E200277BB3 /* GameApp.swift in Sources */,
+				4B02F5A9261B9BAF008A8894 /* UIHelper.swift in Sources */,
 				4B2D9E11261B7E5C00244980 /* GameView.swift in Sources */,
 				4BD56924261A46E200277BB3 /* NotificationView.swift in Sources */,
 				4B2D9E16261B7E8100244980 /* View+backgroundColor.swift in Sources */,

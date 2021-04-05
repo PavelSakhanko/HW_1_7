@@ -17,24 +17,36 @@ struct NewGameView: View {
     @State private var gameRoundCounter = 0
     @State private var roundsLeft = ""
     @State private var startPressed = false
+    @State private var isNeedToScale = UserDefaults.standard.integer(forKey: "osType") > 0 ? true : false
 
     @Binding var isMenuShowing: Bool
     @Binding var isPresentedNewGame: Bool
     
     var body: some View {
         backgroundColor(.blue)
-        VStack {
+        VStack(spacing: isNeedToScale ? 100.0 : 5.0) {
             VStack {
-                Button(action: {
-                    isMenuShowing.toggle()
-                    isPresentedNewGame.toggle()
-                }) {
-                    Text("Close")
+                HStack {
+                    Button(action: {
+                        isMenuShowing.toggle()
+                        isPresentedNewGame.toggle()
+                    }) {
+                        Text("Close")
+                            .foregroundColor(.white)
+                    }
+                    if isNeedToScale {
+                        Spacer()
+                    }
+                }
+                .padding()
+                if isNeedToScale {
+                    Spacer()
                 }
                 HStack {
                     Text("Score: \(gameScore)")
                     Text(gameRoundCounter == 0 || roundsLeft == "0" ? "" : "Rounds: \(11 - gameRoundCounter)")
                 }
+                .foregroundColor(.white)
             }
             HStack(spacing: 20) {
                 showImage()
@@ -42,22 +54,29 @@ struct NewGameView: View {
                     startGame()
                 }) {
                     Text(gameRoundCounter == 0 || roundsLeft == "0" ? "Start" : "\(gameResult)")
+                        .foregroundColor(.white)
                 }
             }
-            HStack {
+            if isNeedToScale {
+                Spacer()
+            }
+            HStack(spacing: isNeedToScale ? 20.0 : 5.0) {
                 ForEach(0...2, id: \.self) { buttonId in
                     Button(action: {
                         pressButton(id: buttonId)
                     }) {
                         Image(possibleMoves[buttonId])
                     }.tag(buttonId)
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
             .foregroundColor(.white)
+            if isNeedToScale {
+                Spacer()
+            }
         }
     }
 }
-
 
 extension NewGameView {
     private func showImage() -> some View {

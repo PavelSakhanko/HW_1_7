@@ -14,7 +14,7 @@ struct SettingsView: View {
     
     var body: some View {
         ZStack {
-            backgroundColor(.white)
+            backgroundColor(.blue)
             VStack {
                 HStack(spacing: 10) {
                     Button(action: {
@@ -28,34 +28,19 @@ struct SettingsView: View {
                 }
                 .foregroundColor(.gray)
 
-                VStack {
-                    NavigationView {
-                        VStack(alignment: .leading, spacing: 30.0) {
-                            Form {
-                                Section(header: Text("Level Settings")) {
-                                    NavigationLink(
-                                        destination: EmptyView()
-                                            .navigationBarTitle("")
-                                            .navigationBarHidden(true)
-                                    ) {
-                                        Text("Set Level")
-                                    }
-                                }
-                                Section(header: Text("Notifications Settings")) {
-                                    NavigationLink(
-                                        destination: EmptyView()
-                                            .navigationBarTitle("")
-                                            .navigationBarHidden(true)
-                                    ) {
-                                        Text("Set Time")
-                                    }
-                                }
+                VStack(alignment: .leading, spacing: 30.0) {
+                    Form {
+                        Section(header: Text("Level Settings")) {
+                            HStack {
+                                Text("Set Level")
                             }
                         }
-                        .navigationBarTitle("")
-                        .navigationBarHidden(true)
+                        Section(header: Text("Notifications Settings")) {
+                            HStack {
+                                Text("Set Time")
+                            }
+                        }
                     }
-                    .navigationViewStyle(StackNavigationViewStyle())
                 }
             }
         }
