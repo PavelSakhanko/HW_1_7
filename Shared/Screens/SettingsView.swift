@@ -16,24 +16,18 @@ struct SettingsView: View {
         ZStack {
             backgroundColor(.white)
             VStack {
-                HStack {
+                HStack(spacing: 10) {
                     Button(action: {
                         isMenuShowing.toggle()
                         isPresentedSettings.toggle()
                     }) {
-                        Text("x")
-                         .foregroundColor(.blue)
-                         .font(.title2)
+                        Text("Close")
                     }
+                    Text("Settings")
                     Spacer()
                 }
-                .padding()
-                Spacer()
+                .foregroundColor(.gray)
 
-                HStack {
-                    Text("Settings")
-                        .foregroundColor(.blue)
-                }
                 VStack {
                     NavigationView {
                         VStack(alignment: .leading, spacing: 30.0) {
@@ -63,7 +57,6 @@ struct SettingsView: View {
                     }
                     .navigationViewStyle(StackNavigationViewStyle())
                 }
-                Spacer()
             }
         }
     }

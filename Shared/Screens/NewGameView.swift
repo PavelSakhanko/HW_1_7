@@ -16,6 +16,7 @@ struct NewGameView: View {
     @State private var gameScore = 0
     @State private var gameRoundCounter = 0
     @State private var roundsLeft = ""
+    @State private var startPressed = false
 
     @Binding var isMenuShowing: Bool
     @Binding var isPresentedNewGame: Bool
@@ -23,39 +24,26 @@ struct NewGameView: View {
     var body: some View {
         backgroundColor(.blue)
         VStack {
-            HStack {
+            VStack {
                 Button(action: {
                     isMenuShowing.toggle()
                     isPresentedNewGame.toggle()
                 }) {
-                    Text("x")
-                     .foregroundColor(.white)
-                     .font(.title2)
+                    Text("Close")
                 }
-                Spacer()
-            }
-            .padding()
-            VStack {
-                Text("Score: \(gameScore)")
-                Text(gameRoundCounter == 0 || roundsLeft == "0" ? "New Game !" :
-                        "Rounds Left: \(11 - gameRoundCounter)")
-                Spacer()
-
-                VStack(spacing: 20) {
-                    showImage()
-                    
-                    Button(action: {
-                        startGame()
-                    }) {
-                        Text(gameRoundCounter == 0 || roundsLeft == "0" ? "Start Game ! " :
-                                "Your Must \(gameResult)")
-                    }
+                HStack {
+                    Text("Score: \(gameScore)")
+                    Text(gameRoundCounter == 0 || roundsLeft == "0" ? "" : "Rounds: \(11 - gameRoundCounter)")
                 }
-                Spacer()
             }
-            .font(.system(size: 30))
-            .foregroundColor(.white)
-            
+            HStack(spacing: 20) {
+                showImage()
+                Button(action: {
+                    startGame()
+                }) {
+                    Text(gameRoundCounter == 0 || roundsLeft == "0" ? "Start" : "\(gameResult)")
+                }
+            }
             HStack {
                 ForEach(0...2, id: \.self) { buttonId in
                     Button(action: {
@@ -65,7 +53,7 @@ struct NewGameView: View {
                     }.tag(buttonId)
                 }
             }
-            Spacer()
+            .foregroundColor(.white)
         }
     }
 }
@@ -103,6 +91,7 @@ extension NewGameView {
     }
 
     private func startGame() {
+        startPressed.toggle()
         gameResult = PossibleResults.allCases.randomElement()!.rawValue
         randomHandForGame()
         getRandomImageIndex()

@@ -17,38 +17,28 @@ struct LeaderboardView: View {
     var body: some View {
         ZStack {
             backgroundColor(.white)
-            
-            
-            
-            
             VStack {
-                HStack {
+                HStack(spacing: 10) {
                     Button(action: {
                         isMenuShowing.toggle()
                         isPresentedLeaderBoard.toggle()
                     }) {
-                       Text("x")
-                        .foregroundColor(.red)
-                        .font(.title2)
+                        Text("Close")
                     }
+                    Text("Leaders")
                     Spacer()
                 }
-                .padding()
-                HStack {
-                    Text("Leaderboard")
-                        .foregroundColor(.red)
-                }
-                
-                List(users.users, id: \.id) { user in
-                    HStack {
-                        Text(user.icon)
-                        Text(user.name)
-                        Spacer()
-                        Text("Score: \(user.score)")
+                .foregroundColor(.gray)
+                VStack {
+                    List(users.users, id: \.id) { user in
+                        HStack {
+                            Text(user.icon)
+                            Text(user.name)
+                            Spacer()
+                            Text("Score: \(user.score)")
+                        }
                     }
                 }
-
-                Spacer()
             }
         }
     }

@@ -16,7 +16,7 @@ struct MenuView: View {
     var body: some View {
         VStack {
             Spacer()
-            VStack(alignment: .center, spacing: 30) {
+            VStack(alignment: .center) {
                 MenuButton(title: "Play", action: playAction)
                 MenuButton(title: "Settings", action: showSettingsAction)
                 MenuButton(title: "Leaderboard", action: showLeaderAction)
